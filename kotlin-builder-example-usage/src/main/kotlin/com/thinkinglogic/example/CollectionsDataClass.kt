@@ -1,9 +1,15 @@
 package com.thinkinglogic.example
 
 import com.thinkinglogic.builder.annotation.Builder
+import com.thinkinglogic.builder.annotation.BuilderOf
 import com.thinkinglogic.builder.annotation.NullableType
 import java.time.LocalDate
-import java.util.*
+import java.util.HashSet
+import java.util.TreeMap
+
+
+@BuilderOf(targetClass = CollectionsDataClass::class, suffix = "BuilderOf")
+class ForCollectionsDataClass
 
 @Builder
 data class CollectionsDataClass(

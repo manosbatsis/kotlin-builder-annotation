@@ -1,9 +1,13 @@
 package com.thinkinglogic.example
 
 import com.thinkinglogic.builder.annotation.Builder
+import com.thinkinglogic.builder.annotation.BuilderOf
 import com.thinkinglogic.builder.annotation.NullableType
 import java.time.LocalDate
-import java.util.*
+import java.util.Arrays
+
+@BuilderOf(targetClass = ArraysDataClass::class, suffix = "BuilderOf")
+class ForArraysDataClass
 
 @Builder
 data class ArraysDataClass(

@@ -1,5 +1,7 @@
 package com.thinkinglogic.builder.annotation
 
+import kotlin.reflect.KClass
+
 /**
  * A lightweight replacement for Lombok's @Builder annotation, decorating a class with @Builder will cause a
  * {AnnotatedClassName}Builder class to be generated.
@@ -31,3 +33,17 @@ annotation class Mutable
 @Retention(AnnotationRetention.SOURCE)
 @Target(AnnotationTarget.FIELD, AnnotationTarget.VALUE_PARAMETER)
 annotation class DefaultValue (val value: String = "")
+
+/**
+ * An alternative to [Builder] that allows specifying the target class
+ * instead of decorating it directly.
+ * Used to generate builders for classes of project dependencies,
+ */
+@Retention(AnnotationRetention.SOURCE)
+@Target(AnnotationTarget.CLASS, AnnotationTarget.CONSTRUCTOR)
+annotation class BuilderOf(
+        val targetClass: KClass<*>,
+        val suffix: String = "Builder",
+        val useConstructors: Boolean = false
+)
+

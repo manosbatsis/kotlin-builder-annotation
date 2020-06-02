@@ -1,7 +1,12 @@
 package com.thinkinglogic.example
 
 import com.thinkinglogic.builder.annotation.Builder
+import com.thinkinglogic.builder.annotation.BuilderOf
 import com.thinkinglogic.builder.annotation.DefaultValue
+
+@BuilderOf(targetClass = ClassWithConstructorParameters::class, suffix = "BuilderOf",
+        useConstructors = true)
+class ForClassWithConstructorParameters
 
 class ClassWithConstructorParameters
 @Builder
